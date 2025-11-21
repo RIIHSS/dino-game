@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dino Jump Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="game-container">
+        <!-- Score Counter -->
+        <div class="score">Score: <span id="scoreValue">0</span></div>
+        
+        <!-- Game Characters -->
+        <div id="dino">🦖</div>
+        <div id="cactus">🌵</div>
+        
+        <!-- Ground Line -->
+        <div id="ground"></div>
+
+        <!-- Game Over Screen (Hidden by default) -->
+        <div id="gameOver" class="hidden">
+            <h1>Game Over!</h1>
+            <p>Your Score: <span id="finalScore">0</span></p>
+            <button onclick="restartGame()">Play Again</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

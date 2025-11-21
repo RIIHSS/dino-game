@@ -1,0 +1,119 @@
+/* General Reset and Layout */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    user-select: none; /* Prevents highlighting text while playing */
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f8ff;
+}
+
+/* Game Container */
+.game-container {
+    position: relative;
+    width: 800px;
+    height: 300px;
+    border: 2px solid #333;
+    background-color: #fff;
+    overflow: hidden; /* Keeps elements inside the box */
+    border-bottom: 10px solid #5D4037; /* The Ground */
+}
+
+/* The Dinosaur */
+#dino {
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+    width: 50px;
+    height: 50px;
+    font-size: 40px; /* Size of the emoji */
+    line-height: 55px;
+    z-index: 2;
+}
+
+/* Jump Animation Class */
+.animate-dino {
+    animation: jump 0.5s linear;
+}
+
+@keyframes jump {
+    0% { bottom: 0; }
+    30% { bottom: 130px; } /* Jump peak */
+    70% { bottom: 130px; } /* Hang time */
+    100% { bottom: 0; }
+}
+
+/* The Cactus (Obstacle) */
+#cactus {
+    position: absolute;
+    bottom: 0;
+    left: 750px; /* Start off-screen right */
+    width: 40px;
+    height: 50px;
+    font-size: 40px;
+    line-height: 55px;
+}
+
+/* Cactus Movement Animation */
+.animate-cactus {
+    animation: moveCactus 2s infinite linear;
+}
+
+@keyframes moveCactus {
+    0% { left: 800px; }
+    100% { left: -50px; }
+}
+
+/* Score Board */
+.score {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    background: #eee;
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+
+/* Game Over Overlay */
+#gameOver {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    z-index: 10;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.hidden {
+    display: none;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e64a19;
+}
